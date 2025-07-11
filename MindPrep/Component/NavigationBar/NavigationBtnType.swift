@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum NavigationBtnType {
+    case notify
+    case bookmark
+    
+}
