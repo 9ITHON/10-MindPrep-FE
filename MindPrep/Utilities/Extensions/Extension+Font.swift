@@ -6,33 +6,34 @@
 //
 
 import Foundation
-import UIKit
+import SwiftUI
 
-extension UIFont {
-    static func SUIT(size fontSize: CGFloat, weight: UIFont.Weight) -> UIFont {
-        let familyName = SUIT
+extension Font {
+    static func suit(size: CGFloat, weight: Font.Weight = .regular) -> Font {
+        let familyName = "SUIT"
         var weightString: String
-        switch weight {
         
-        case .bold:
-            weightString = "Bold"
-        case .heavy:
-            weightString = "ExtraBold"
+        switch weight {
         case .ultraLight:
             weightString = "ExtraLight"
-        case .heavy:
-            weightString = "Heavy"
-        case .light:
-            weightString = "Light"
-        case .medium:
-            weightString = "Medium"
-        case .regular:
-            weightString = "Regular"
         case .thin:
             weightString = "Thin"
+        case .light:
+            weightString = "Light"
+        case .regular:
+            weightString = "Regular"
+        case .medium:
+            weightString = "Medium"
+        case .semibold:
+            weightString = "Bold"
+        case .bold:
+            weightString = "ExtraBold"
+        case .heavy:
+            weightString = "Heavy"
         default:
             weightString = "Regular"
         }
-        return UIFont(name: "\(String(describing: familyName))-\(weightString)",size: fontSize) ?? .systemFont(ofSize: fontSize, weight: weight)
+        
+        return Font.custom("\(familyName)-\(weightString)", size: size)
     }
 }
