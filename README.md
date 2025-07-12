@@ -1,6 +1,7 @@
 # 10-MindPrep-FE
 
-파일 구조
+## 파일 구조
+```
 MindPrep/
 ├── App/
 ├── Models/
@@ -55,3 +56,4 @@ MindPrep/
 │   ├── Fonts/                     
 │   └── Assets.xcassets            
 └── Info.plist                    
+```
