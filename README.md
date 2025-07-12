@@ -1,5 +1,8 @@
 # 10-MindPrep-FE
-
+## 라이브러리
+- moya
+- kakaologin
+- cluadeAPI
 ## 파일 구조
 ```
 MindPrep/
