@@ -37,10 +37,9 @@ struct CustomNavigationBar: View {
         ZStack{
             HStack(alignment: .center  ){
                 Spacer()
-                
                 if isMainTitle {
                     Text("마음 채비")
-                        .font(.suit(size: 20, weight: .heavy))
+                        .font(.suit(size: 20, weight: .bold))
                 } else {
                     Text(title ?? "타이틀")
                 }
