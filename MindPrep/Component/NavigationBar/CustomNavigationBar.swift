@@ -17,7 +17,7 @@ struct CustomNavigationBar: View {
     let title: String?
     init(
         isDisplayLeftBtn: Bool = true,
-        isDisplayRightBtnL: Bool = true,
+        isDisplayRightBtn: Bool = true,
         isMainTitle: Bool = true,
         leftBtnAction: @escaping () -> Void = { },
         rightBtnAction: @escaping () -> Void = { },
@@ -25,7 +25,7 @@ struct CustomNavigationBar: View {
         title: String? = nil
     ) {
         self.isDisplayLeftBtn = isDisplayLeftBtn
-        self.isDisplayRightBtn = isDisplayRightBtnL
+        self.isDisplayRightBtn = isDisplayRightBtn
         self.isMainTitle = isMainTitle
         self.leftBtnAction = leftBtnAction
         self.rightBtnAction = rightBtnAction
@@ -68,8 +68,14 @@ struct CustomNavigationBar: View {
                                 .scaledToFit()
                                 .frame(width: 20, height: 20)
                                 .foregroundStyle(.gray)
-                            
                         }
+                            else if rightBtnType == .bookmark{
+                                Image(systemName: "bookmark")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20, height: 20)
+                                    .foregroundStyle(.gray)
+                            }
                     })
                 }
             }

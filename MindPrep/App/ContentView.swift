@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var pathModel = PathModel()
+    @StateObject private var writeViewModel = WriteEditViewModel()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack(path: $pathModel.paths) {
+            WriteEditView()
+                .environmentObject(writeViewModel)
+                .navigationDestination(for: PathType.self, destination: { pathType in
+                    switch pathType {
+                    case .writeEditView(_):
+                        WriteEditView()
+                            .navigationBarBackButtonHidden()
+                            .environmentObject(writeViewModel)
+                    
+                    case .homeView:
+                        HomeView()
+                    }
+                    
+                    
+                })
         }
-        .padding()
+        .environmentObject(pathModel)
     }
 }
 
